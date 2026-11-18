@@ -13,16 +13,18 @@ in
     system.activationScripts.create-and-copy-navidrome-files.text = ''
       create_podman_directory () {
         mkdir -p $3
-        chmod 0775 $3
         chown "''${1}:''${2}" $3
+        chmod 0775 $3
+        find "''${3}/" -type d -exec chown "''${1}:''${2}" {} +
         find "''${3}/" -type d -exec chmod 0775 {} +
+        find "''${3}/" -type f -exec chown "''${1}:''${2}" {} +
         find "''${3}/" -type f -exec chmod 0664 {} +
       }
 
-      create_podman_directory root service-users /srv/configuration
+      create_podman_directory ${podman-user} service-users /srv/configuration
       create_podman_directory ${podman-user} service-users /srv/configuration/navidrome
       create_podman_directory ${podman-user} service-users /srv/configuration/navidrome/data
-      create_podman_directory root service-users /srv/media
+      create_podman_directory ${podman-user} service-users /srv/media
       create_podman_directory ${podman-user} service-users /srv/media/navidrome
       create_podman_directory ${podman-user} service-users /srv/media/navidrome/game-soundtracks
       create_podman_directory ${podman-user} service-users /srv/media/navidrome/main
@@ -39,10 +41,10 @@ in
       ''v "/srv/media/navidrome/game-soundtracks" 0775 ${podman-user} service-users''
       ''v "/srv/media/navidrome/main" 0775 ${podman-user} service-users''
       ''v "/srv/media/navidrome/musicals" 0775 ${podman-user} service-users''
-      ''z "/srv/configuration" 0775 root service-users''
+      ''z "/srv/configuration" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/navidrome" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/navidrome/data" 0775 ${podman-user} service-users''
-      ''z "/srv/media" 0775 root service-users''
+      ''z "/srv/media" 0775 ${podman-user} service-users''
       ''z "/srv/media/navidrome" 0775 ${podman-user} service-users''
       ''z "/srv/media/navidrome/game-soundtracks" 0775 ${podman-user} service-users''
       ''z "/srv/media/navidrome/main" 0775 ${podman-user} service-users''
