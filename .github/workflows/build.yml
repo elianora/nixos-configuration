@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Nix, Check Flake, and Dry Build
+      - name: Install Nix
         uses: cachix/install-nix-action@v31.11.5
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check Flake
+        run: nix flake check --show-trace --all-systems path:./
+      - name: Dry Build
         run: |
-          nix flake check --show-trace --all-systems path:./ && \
           nixos-rebuild dry-build --show-trace --flake path:./#golden-torizo && \
           nixos-rebuild dry-build --show-trace --flake path:./#mother-brain && \
           nixos-rebuild dry-build --show-trace --falke path:./#ridley
