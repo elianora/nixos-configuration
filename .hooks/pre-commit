@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+ROOT_PATH="$( cd -- "$(dirname "$0")/.." >/dev/null 2>&1 ; pwd -P )"
+pushd $ROOT_PATH
+nixos-rebuild dry-build --flake ./#golden-torizo --show-trace \
+    && nixos-rebuild dry-build --flake ./#mother-brain --show-trace \
+    && nixos-rebuild dry-build --flake ./#ridley --show-trace
+popd

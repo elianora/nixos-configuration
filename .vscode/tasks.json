@@ -1,0 +1,137 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "amount-of-time",
+      "default": "1d",
+      "description": "Enter the amount of time to use:",
+      "type": "promptString"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "nix: clean versions",
+      "type": "shell",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "command": "pkexec",
+      "args": [
+        "nix",
+        "profile",
+        "wipe-history",
+        "--older-than",
+        "${input:amount-of-time}",
+        "--profile",
+        "/nix/var/nix/profiles/system",
+        "&&",
+        "nix-collect-garbage",
+        "--delete-older-than",
+        "${input:amount-of-time}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "nixos-rebuild: switch using flake",
+      "type": "shell",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "command": "pkexec",
+      "args": [
+        "nixos-rebuild",
+        "switch",
+        "--flake",
+        "path:${workspaceFolder}",
+        "--show-trace"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "nixos-rebuild: update and switch using flake(s)",
+      "type": "shell",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "command": "nix",
+      "args": [
+        "flake",
+        "update",
+        "&&",
+        "pkexec",
+        "nixos-rebuild",
+        "switch",
+        "--flake",
+        "path:${workspaceFolder}",
+        "--show-trace"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "nixos-rebuild: flake check and dry run build",
+      "type": "shell",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "command": "nix",
+      "args": [
+        "flake",
+        "check",
+        "--show-trace",
+        "--all-systems",
+        "path:${workspaceFolder}",
+        "&&",
+        "nixos-rebuild",
+        "dry-build",
+        "--flake",
+        "path:${workspaceFolder}#golden-torizo",
+        "--show-trace",
+        "&&",
+        "nixos-rebuild",
+        "dry-build",
+        "--flake",
+        "path:${workspaceFolder}#mother-brain",
+        "--show-trace",
+        "&&",
+        "nixos-rebuild",
+        "dry-build",
+        "--flake",
+        "path:${workspaceFolder}#ridley",
+        "--show-trace"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
