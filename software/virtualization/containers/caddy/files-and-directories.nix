@@ -98,13 +98,13 @@ in
         find "''${3}/" -type f -exec chmod 0664 {} +
       }
 
-      create_podman_directory root service-users /srv/configuration
+      create_podman_directory ${podman-user} service-users /srv/configuration
       create_podman_directory ${podman-user} service-users /srv/configuration/caddy
       create_podman_directory ${podman-user} service-users /srv/configuration/caddy/config
       create_podman_directory ${podman-user} service-users /srv/configuration/caddy/data
       create_podman_directory ${podman-user} service-users /srv/configuration/caddy/etc
       create_podman_directory ${podman-user} service-users /srv/configuration/caddy/logs
-      create_podman_directory root service-users /srv/www
+      create_podman_directory ${podman-user} service-users /srv/www
       create_podman_directory ${podman-user} service-users /srv/www/elianorarose.com
 
       # Clean old site contents to ensure as close to declarative as possible
@@ -149,8 +149,8 @@ in
       ''z "/srv/configuration/caddy/data" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/caddy/etc" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/caddy/logs" 0775 ${podman-user} service-users''
-      ''z "/srv/configuration" 0775 root service-users''
-      ''z "/srv/www" 0775 root service-users''
+      ''z "/srv/configuration" 0775 ${podman-user} service-users''
+      ''z "/srv/www" 0775 ${podman-user} service-users''
       ''z "/srv/www/elianorarose.com" 0775 ${podman-user} service-users''
     ];
   };

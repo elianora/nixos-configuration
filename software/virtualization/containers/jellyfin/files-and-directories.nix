@@ -21,11 +21,11 @@ in
         find "''${3}/" -type f -exec chmod 0664 {} +
       }
 
-      create_podman_directory root service-users /srv/configuration
+      create_podman_directory ${podman-user} service-users /srv/configuration
       create_podman_directory ${podman-user} service-users /srv/configuration/jellyfin
       create_podman_directory ${podman-user} service-users /srv/configuration/jellyfin/cache
       create_podman_directory ${podman-user} service-users /srv/configuration/jellyfin/config
-      create_podman_directory root service-users /srv/media
+      create_podman_directory ${podman-user} service-users /srv/media
       create_podman_directory ${podman-user} service-users /srv/media/jellyfin
       create_podman_directory ${podman-user} service-users /srv/media/jellyfin/anime
       create_podman_directory ${podman-user} service-users /srv/media/jellyfin/audiobooks
@@ -51,11 +51,11 @@ in
       ''v "/srv/media/jellyfin/music" 0775 ${podman-user} service-users''
       ''v "/srv/media/jellyfin/pictures" 0775 ${podman-user} service-users''
       ''v "/srv/media/jellyfin/tv" 0775 ${podman-user} service-users''
-      ''z "/srv/configuration" 0775 root service-users''
+      ''z "/srv/configuration" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/jellyfin" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/jellyfin/cache" 0775 ${podman-user} service-users''
       ''z "/srv/configuration/jellyfin/config" 0775 ${podman-user} service-users''
-      ''z "/srv/media" 0775 root service-users''
+      ''z "/srv/media" 0775 ${podman-user} service-users''
       ''z "/srv/media/jellyfin" 0775 ${podman-user} service-users''
       ''z "/srv/media/jellyfin/anime" 0775 ${podman-user} service-users''
       ''z "/srv/media/jellyfin/audiobooks" 0775 ${podman-user} service-users''
