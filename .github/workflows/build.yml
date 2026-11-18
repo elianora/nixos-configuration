@@ -9,14 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install Nix
+      - id: checkout-repository
+        name: Checkout Repository
+        uses: actions/checkout@v4
+      - id: install-nix
+        name: Install Nix
         uses: cachix/install-nix-action@v31.11.5
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check Flake
+      - id: check-flake
+        name: Check Flake
         run: nix flake check --show-trace --all-systems path:./
-      - name: Dry Build
+      - id: dry-build
+        name: Dry Build
         run: |
           nixos-rebuild dry-build --show-trace --flake path:./#golden-torizo && \
           nixos-rebuild dry-build --show-trace --flake path:./#mother-brain && \
