@@ -16,7 +16,7 @@ in
         chown "''${1}:''${2}" $3
         chmod 0775 $3
         find "''${3}/" -type d -exec chmod 0775 {} +
-        find "''${3}/" -type f -exec chown ${podman-user}:service-users 0664 {} +
+        find "''${3}/" -type f -exec chown ${podman-user}:service-users {} +
         find "''${3}/" -type f -exec chmod 0664 {} +
       }
 
