@@ -13,6 +13,6 @@ in
     owner = "elianora";
     repo = "personal-site";
     rev = "bfb58a65b28259b041926d48ce5e113e1b5357d9";
-    hash = lib.fakeHash;
+    hash = "sha256-RrUJ5lnbe6whEX+SZ0y/VlOpMVIcymlqISTIxxqVKDc=";
   });
 }
