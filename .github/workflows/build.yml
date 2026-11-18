@@ -17,6 +17,7 @@ jobs:
         uses: cachix/install-nix-action@v31.11.5
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          nix_path: nixpkgs=channel:nixos-26.05
       - id: install-nixos-rebuild
         name: Install nixos-rebuild
         run: nix-env -i nixos-rebuild -f '<nixpkgs>'
