@@ -17,7 +17,7 @@ jobs:
         uses: cachix/install-nix-action@v31.11.5
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
-        run: nix-env -i nixos-rebuild -f '<nixpkgs>'
+      - run: nix-env -i nixos-rebuild -f '<nixpkgs>'
       - id: check-flake
         name: Check Flake
         run: nix flake check --show-trace --all-systems path:./
