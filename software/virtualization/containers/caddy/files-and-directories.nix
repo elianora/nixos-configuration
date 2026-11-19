@@ -17,7 +17,7 @@ let
         }
       }
 
-      *.elianorarose.com {
+      (dns01_challenge) {
         @endpoints {
           path /present /cleanup
         }
@@ -27,17 +27,19 @@ let
             resolvers 1.1.1.1 1.0.0.1
             user $CADDY_DNS01_USERNAME {
               password $CADDY_DNS01_HASHED_PASSWORD
-              allow_domains elianorarose.com
+              allow_domains {args[0]}
             }
           }
         }
       }
 
       elianorarose.com {
+        import dns01_challenge elianorarose.com
         redir {scheme}://www.{host}{uri}
       }
 
       www.elianorarose.com, :443 {
+        import dns01_challenge www.elianorarose.com
         root /srv/elianorarose.com
         file_server
 
@@ -55,12 +57,14 @@ let
     (lib.optionalString config.home-manager.users.${podman-user}.software.virtualization.containers.jellyfin.enable ''
 
       media.elianorarose.com {
+        import dns01_challenge media.elianorarose.com
         reverse_proxy jellyfin:8096
       }
     '')
     (lib.optionalString config.home-manager.users.${podman-user}.software.virtualization.containers.jellyfin.enable ''
 
       music.elianorarose.com {
+        import dns01_challenge music.elianorarose.com
         reverse_proxy navidrome:4533
       }
     '')
