@@ -17,21 +17,21 @@ let
         }
       }
 
-      #*.elianorarose.com {
-      #  @endpoints {
-      #    path /present /cleanup
-      #  }
-      #
-      #  handle @endpoints {
-      #    dns01proxy {
-      #      resolvers 1.1.1.1 1.0.0.1
-      #      user $CADDY_DNS01_USERNAME {
-      #        password $CADDY_DNS01_HASHED_PASSWORD
-      #        allow_domains elianorarose.com
-      #      }
-      #    }
-      #  }
-      #}
+      *.elianorarose.com {
+        @endpoints {
+          path /present /cleanup
+        }
+
+        handle @endpoints {
+          dns01proxy {
+            resolvers 1.1.1.1 1.0.0.1
+            user $CADDY_DNS01_USERNAME {
+              password $CADDY_DNS01_HASHED_PASSWORD
+              allow_domains elianorarose.com
+            }
+          }
+        }
+      }
 
       elianorarose.com {
         redir {scheme}://www.{host}{uri}
