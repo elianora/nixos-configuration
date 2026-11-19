@@ -33,7 +33,18 @@ in
     ];
 
     boot.kernel.sysctl."net.ipv4.ip_unprivileged_port_start" = lib.mkIf any-user-has-podman-enabled 80;
-    environment.systemPackages = lib.optional any-user-has-podman-enabled pkgs.passt;
+    environment = lib.mkIf any-user-has-podman-enabled {
+      extraInit = ''
+        if [ -z "$DOCKER_HOST" -a -n "$XDG_RUNTIME_DIR" ]; then
+          export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+        fi
+      '';
+
+      systemPackages = with pkgs; [
+        passt
+      ];
+    };
+
     systemd = lib.mkIf any-user-has-podman-enabled {
       services.dummy-wait-for-network = {
         description = "Dummy service to guarantee network is online for podman without causing build failures";
@@ -60,6 +71,9 @@ in
         autoPrune.enable = true;
         dockerCompat = true;
         defaultNetwork.settings.dns_enabled = true;
+        extraPackages = with pkgs; [
+          zfs
+        ];
       };
     };
   };
