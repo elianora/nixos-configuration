@@ -5,7 +5,6 @@
     ./files-and-directories.nix
     ./image-dockerfile.nix
     ./networking.nix
-    ./personal-site.nix
   ];
 
   config.home-manager.sharedModules = [

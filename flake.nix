@@ -24,6 +24,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Personal site (https://github.com/elianora/personal-site)
+    personal-site = {
+      url = "github:elianora/personal-site/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # KDE Plasma Manager (https://github.com/nix-community/plasma-manager)
     plasma-manager = {
       url = "github:nix-community/plasma-manager";

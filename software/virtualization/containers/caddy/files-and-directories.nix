@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 let
   any-user-has-caddy-enabled = builtins.any (user: config.home-manager.users.${user}.software.virtualization.containers.caddy.enable) (builtins.attrNames config.home-manager.users);
@@ -113,7 +113,7 @@ in
 
       # Clean old site contents to ensure as close to declarative as possible
       rm -rf /srv/www/elianorarose.com/*
-      cp -R ${config.custom-packages.personal-site}/* /srv/www/elianorarose.com/
+      cp -R ${inputs.personal-site.packages.${pkgs.system}.personal-site}/* /srv/www/elianorarose.com/
 
       # Set namesilo API key
       PORKBUN_API_KEY=$(cat ${config.sops.secrets."porkbun/api-key".path})
