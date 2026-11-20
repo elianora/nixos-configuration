@@ -9,10 +9,22 @@ in
     type = lib.types.attrs;
   };
 
-  config.custom-packages.personal-site = lib.mkIf any-user-has-caddy-enabled (pkgs.fetchFromGitHub {
-    owner = "elianora";
-    repo = "personal-site";
-    rev = "bfb58a65b28259b041926d48ce5e113e1b5357d9";
-    hash = "sha256-RrUJ5lnbe6whEX+SZ0y/VlOpMVIcymlqISTIxxqVKDc=";
+  config.custom-packages.personal-site = lib.mkIf any-user-has-caddy-enabled (pkgs.stdenv.mkDerivation {
+    name = "personal-site";
+    src = pkgs.fetchFromGitHub {
+      owner = "elianora";
+      repo = "personal-site";
+      rev = "54640ca012f995d8ad01c2deec4727dbb5e57607";
+      hash = lib.fakeHash;
+    };
+
+    nativeBuildInputs = with pkgs; [
+      jekyll
+    ];
+
+    installPhase = ''
+      export JEKYLL_ENV=production
+      ${pkgs.jekyll}/bin/jekyll build --destination $out
+    '';
   });
 }

@@ -113,11 +113,7 @@ in
 
       # Clean old site contents to ensure as close to declarative as possible
       rm -rf /srv/www/elianorarose.com/*
-      cp -f ${config.custom-packages.personal-site}/index.html /srv/www/elianorarose.com/index.html
-      cp -R ${config.custom-packages.personal-site}/fonts /srv/www/elianorarose.com/fonts
-      cp -R ${config.custom-packages.personal-site}/images /srv/www/elianorarose.com/images
-      cp -R ${config.custom-packages.personal-site}/styles /srv/www/elianorarose.com/styles
-      cp -R ${config.custom-packages.personal-site}/on-software /srv/www/elianorarose.com/on-software
+      cp -R ${config.custom-packages.personal-site}/* /srv/www/elianorarose.com/
 
       # Set namesilo API key
       PORKBUN_API_KEY=$(cat ${config.sops.secrets."porkbun/api-key".path})
