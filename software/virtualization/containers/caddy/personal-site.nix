@@ -15,7 +15,7 @@ in
       owner = "elianora";
       repo = "personal-site";
       rev = "54640ca012f995d8ad01c2deec4727dbb5e57607";
-      hash = lib.fakeHash;
+      hash = "sha256-nYNGzGJDukWboBLbnVQegM4PkKOP9esGDuRdkU4txYo=";
     };
 
     nativeBuildInputs = with pkgs; [
