@@ -113,7 +113,7 @@ in
 
       # Clean old site contents to ensure as close to declarative as possible
       rm -rf /srv/www/elianorarose.com/*
-      cp -R ${inputs.personal-site.packages.${pkgs.system}.personal-site}/* /srv/www/elianorarose.com/
+      cp -R ${inputs.personal-site.packages.${pkgs.stdenv.hostPlatform.system}.personal-site}/* /srv/www/elianorarose.com/
 
       # Set namesilo API key
       PORKBUN_API_KEY=$(cat ${config.sops.secrets."porkbun/api-key".path})
