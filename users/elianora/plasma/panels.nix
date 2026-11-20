@@ -68,7 +68,7 @@
               "applications:firefox.desktop"
               "applications:discord.desktop"
               "applications:codium.desktop"
-              "applications:md.obsidian.Obsidian.desktop"
+              "applications:obsidian.desktop"
               "applications:org.kde.dolphin.desktop"
               "applications:org.kde.konsole.desktop"
             ];
