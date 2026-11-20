@@ -26,7 +26,7 @@
       "nvidia"
     ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
     kernelParams = [
       "quiet"
       "rd.udev.log_level=3"

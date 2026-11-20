@@ -5,6 +5,10 @@
     # nixpkgs (https://github.com/NixOS/nixpkgs)
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    # CachyOS kernel for NixOS (https://github.com/xddxdd/nix-cachyos-kernel)
+    # NOTE: Do not override its nixpkgs input, otherwise there can be mismatch between patches and kernel version
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
     # Home Manager (https://github.com/nix-community/home-manager)
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";

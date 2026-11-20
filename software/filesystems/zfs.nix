@@ -15,8 +15,11 @@
 
   config = lib.mkIf config.software.filesystems.zfs.enable {
     boot = {
-      supportedFilesystems.zfs = lib.mkForce true;
-      zfs.forceImportRoot = false;
+      supportedFilesystems.zfs = true;
+      zfs = {
+        forceImportRoot = false;
+        package = config.boot.kernelPackages.zfs_cachyos;
+      };
     };
 
     environment.systemPackages = with pkgs; [

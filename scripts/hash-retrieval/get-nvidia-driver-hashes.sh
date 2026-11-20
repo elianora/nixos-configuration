@@ -2,7 +2,7 @@
 set -eu
 
 ## Version Settings
-NVIDIA_DRIVER_VERSION="620.70.06"
+NVIDIA_DRIVER_VERSION="620.73.04"
 
 ## Hash Output
 printf "version = \"${NVIDIA_DRIVER_VERSION}\";\n"
