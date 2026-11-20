@@ -19,12 +19,21 @@ in
     };
 
     nativeBuildInputs = with pkgs; [
+      bundler
+      bundix
       jekyll
+      ruby.devEnv
     ];
 
     installPhase = ''
       export JEKYLL_ENV=production
-      ${pkgs.jekyll}/bin/jekyll build --destination $out
+      mkdir vendor
+      ${pkgs.bundler}/bin/bundle config set path vendor
+      ${pkgs.bundler}/bin/bundle config set --local force_ruby_platform true
+      ${pkgs.bundler}/bin/bundle cache
+      ${pkgs.bundix}/bin/bundix
+      ${pkgs.bundler}/bin/bundler exec jekyll build --destination $out
+      rm -rf vendor
     '';
   });
 }
