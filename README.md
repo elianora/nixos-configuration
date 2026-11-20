@@ -60,6 +60,7 @@ The following references have been used heavily in creating this in addition to 
 - Specific Hardware Configuration
     - [NixOS Hardware Preconfigurations](https://github.com/NixOS/nixos-hardware/tree/master)
     - [Scarlett2 Firmware](https://github.com/jakkunight/scarlett2-firmware-nix)
+- [CachyOS Kernel for NixOS](https://github.com/xddxdd/nix-cachyos-kernel)
 - ZFS
     - [ZFS on NixOS, High Level](https://www.return12.net/zfs-on-nixos/)
     - [ZFS on NixOS, Optimization](https://blog.tiserbox.com/posts/2024-02-09-zfs-on-nix-os.html)
