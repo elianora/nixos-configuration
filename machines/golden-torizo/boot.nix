@@ -25,7 +25,7 @@
       "nvidia"
     ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     kernelParams = [
       "acpi_rev_override"
       "quiet"

@@ -23,7 +23,7 @@
       "kvm-amd"
     ];
 
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
     kernelParams = [
       "quiet"
       "rd.udev.log_level=3"
