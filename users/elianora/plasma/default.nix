@@ -7,6 +7,7 @@
     ./inputs.nix
     ./keyboard-shortcuts.nix
     ./panels.nix
+    ./power-management.nix
     ./search.nix
   ];
 
