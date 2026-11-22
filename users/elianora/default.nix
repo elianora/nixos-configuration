@@ -7,6 +7,7 @@
     ./halloy.nix
     ./konsole.nix
     ./plasma
+    ./reaper.nix
   ];
 
   config = {

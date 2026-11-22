@@ -5,7 +5,7 @@
     preferences.general.startupSettings.showSplashScreenOnStartup = false;
     swell.colortheme = {
       enable = true;
-      preset = inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.realinux-dark-swell-theme;
+      preset = inputs.reaper-flake.packages.${pkgs.stdenv.hostPlatform.system}.reapertips-theme;
     };
 
     theme = {
