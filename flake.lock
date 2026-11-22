@@ -310,22 +310,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1795258312,
-        "narHash": "sha256-IEuDsf80ubivfpidbRsIm30HVo7PZIdZt1stRsbaY4Y=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "94c3211b0ee8ba969a3f12eb4aff8ba0f72971dd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-26.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "personal-site": {
       "inputs": {
         "bob-ruby": "bob-ruby",
@@ -377,7 +361,9 @@
     "reaper-flake": {
       "inputs": {
         "flake-parts": "flake-parts_2",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "wdl": "wdl"
       },
       "locked": {
