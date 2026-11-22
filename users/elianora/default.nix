@@ -94,7 +94,7 @@
       recording-and-streaming = {
         obs-studio.enable = osConfig.recording.has-capture-card && !osConfig.headless;
         open-deck.enable = osConfig.recording.has-stream-deck && !osConfig.headless;
-        reaper.enable = false; #osConfig.audio.has-recording-device && !osConfig.headless;
+        reaper.enable = osConfig.audio.has-recording-device && !osConfig.headless;
         tenacity.enable = osConfig.audio.has-recording-device && !osConfig.headless;
       };
     };

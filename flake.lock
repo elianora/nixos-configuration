@@ -367,15 +367,15 @@
         "wdl": "wdl"
       },
       "locked": {
-        "lastModified": 1795318810,
-        "narHash": "sha256-BtIb7l8Kko8id7PtoBoydR61NIKtwgrQxfK/O20mpyA=",
-        "owner": "9Prestidigitator",
+        "lastModified": 1795357186,
+        "narHash": "sha256-ynydHbPKtzIArJuPtlyzC3k/S2mBHgUgT/mrbAe0xG0=",
+        "owner": "elianora",
         "repo": "reaper-flake",
-        "rev": "4e50d6d03d7ea32d697828eb8a367b5ce31d0dea",
+        "rev": "f299a8d7a4c908c2e6724fbea9098b7a0551f692",
         "type": "github"
       },
       "original": {
-        "owner": "9Prestidigitator",
+        "owner": "elianora",
         "repo": "reaper-flake",
         "type": "github"
       }
