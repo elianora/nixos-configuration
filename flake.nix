@@ -39,6 +39,12 @@
       };
     };
 
+    # Reaper flake (https://github.com/9Prestidigitator/reaper-flake)
+    reaper-flake = {
+      url = "github:9Prestidigitator/reaper-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Rust Overlay (https://github.com/oxalica/rust-overlay)
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

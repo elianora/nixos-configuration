@@ -97,6 +97,27 @@
     },
     "flake-parts_2": {
       "inputs": {
+        "nixpkgs-lib": [
+          "reaper-flake",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793576659,
+        "narHash": "sha256-V1h85lUaJBQoHFrB2vpXZOE0Ju1MYSnIpsehoVZYlDo=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "ea2630b7470978622c7689a1ff75d2b389175399",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_3": {
+      "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_2"
       },
       "locked": {
@@ -289,6 +310,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1795258312,
+        "narHash": "sha256-IEuDsf80ubivfpidbRsIm30HVo7PZIdZt1stRsbaY4Y=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "94c3211b0ee8ba969a3f12eb4aff8ba0f72971dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "personal-site": {
       "inputs": {
         "bob-ruby": "bob-ruby",
@@ -337,6 +374,26 @@
         "type": "github"
       }
     },
+    "reaper-flake": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": "nixpkgs_3",
+        "wdl": "wdl"
+      },
+      "locked": {
+        "lastModified": 1795318810,
+        "narHash": "sha256-BtIb7l8Kko8id7PtoBoydR61NIKtwgrQxfK/O20mpyA=",
+        "owner": "9Prestidigitator",
+        "repo": "reaper-flake",
+        "rev": "4e50d6d03d7ea32d697828eb8a367b5ce31d0dea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "9Prestidigitator",
+        "repo": "reaper-flake",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flatpaks": "flatpaks",
@@ -346,6 +403,7 @@
         "nixpkgs": "nixpkgs_2",
         "personal-site": "personal-site",
         "plasma-manager": "plasma-manager",
+        "reaper-flake": "reaper-flake",
         "rust-overlay": "rust-overlay",
         "scarlett2-firmware-nix": "scarlett2-firmware-nix",
         "sops-nix": "sops-nix"
@@ -394,7 +452,7 @@
     },
     "scarlett2-firmware-nix": {
       "inputs": {
-        "flake-parts": "flake-parts_2",
+        "flake-parts": "flake-parts_3",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -460,6 +518,23 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "wdl": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795291378,
+        "narHash": "sha256-qE424afveQaKq06goUomUcfRyhBhI8JV6/lhGelovzQ=",
+        "owner": "justinfrankel",
+        "repo": "WDL",
+        "rev": "dc0f5f48914bdc40ef5cb7bdb5c2c8db0855ffea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "justinfrankel",
+        "ref": "pull/40/merge",
+        "repo": "WDL",
         "type": "github"
       }
     }
