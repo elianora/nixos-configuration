@@ -41,7 +41,7 @@
 
     # Reaper flake (https://github.com/9Prestidigitator/reaper-flake)
     reaper-flake = {
-      url = "github:elianora/reaper-flake";
+      url = "github:9Prestidigitator/reaper-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

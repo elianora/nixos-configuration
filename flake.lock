@@ -367,15 +367,15 @@
         "wdl": "wdl"
       },
       "locked": {
-        "lastModified": 1795357186,
-        "narHash": "sha256-ynydHbPKtzIArJuPtlyzC3k/S2mBHgUgT/mrbAe0xG0=",
-        "owner": "elianora",
+        "lastModified": 1795533269,
+        "narHash": "sha256-PmHQJ5eBkjiUDI9z2q1CBluVB2iQSc4qeSoeP/8GT1E=",
+        "owner": "9Prestidigitator",
         "repo": "reaper-flake",
-        "rev": "f299a8d7a4c908c2e6724fbea9098b7a0551f692",
+        "rev": "072debda97768ae0c69d140bc4d2507416af7241",
         "type": "github"
       },
       "original": {
-        "owner": "elianora",
+        "owner": "9Prestidigitator",
         "repo": "reaper-flake",
         "type": "github"
       }
@@ -510,11 +510,11 @@
     "wdl": {
       "flake": false,
       "locked": {
-        "lastModified": 1795291378,
-        "narHash": "sha256-qE424afveQaKq06goUomUcfRyhBhI8JV6/lhGelovzQ=",
+        "lastModified": 1795526353,
+        "narHash": "sha256-1O098g5ZvoZpyAuH3++bx/HhASjiQkYf5s18XSCNhOs=",
         "owner": "justinfrankel",
         "repo": "WDL",
-        "rev": "dc0f5f48914bdc40ef5cb7bdb5c2c8db0855ffea",
+        "rev": "be1ac80024550b0f865b1c1bed68997ed851da0c",
         "type": "github"
       },
       "original": {
