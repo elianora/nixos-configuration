@@ -14,6 +14,10 @@
             assertion = config.software.development-tools.languages.dotnet.enable;
             message = ".NET language support is required to enable Rider";
           }
+          {
+            assertion = false;
+            message = "Rider is disallowed temporarily due to being effected by CVE-2026-111497";
+          }
         ];
 
         home.packages = with pkgs; [ jetbrains.rider ];
