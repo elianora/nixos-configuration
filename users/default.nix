@@ -6,6 +6,7 @@ let
     value = ({ inputs, ... }: {
       imports = [
         inputs.flatpaks.homeModules.default
+        inputs.prismix.homeModules.default
         inputs.reaper-flake.homeModules.reaper
         ./${username}
       ];

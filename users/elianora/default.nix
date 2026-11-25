@@ -75,6 +75,7 @@
 
       games = {
         cockatrice.enable = !osConfig.headless;
+        minecraft.enable = !osConfig.headless;
         steam.enable = !osConfig.headless;
       };
 
