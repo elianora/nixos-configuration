@@ -73,6 +73,11 @@
         powerline.enable = true;
       };
 
+      games = {
+        cockatrice.enable = !osConfig.headless;
+        steam.enable = !osConfig.headless;
+      };
+
       messengers = {
         discord.enable = !osConfig.headless;
         halloy.enable = !osConfig.headless;

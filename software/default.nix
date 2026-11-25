@@ -8,6 +8,7 @@
     ./development-tools
     ./filesystems
     ./fonts
+    ./games
     ./messengers
     ./misc
     ./multimedia
