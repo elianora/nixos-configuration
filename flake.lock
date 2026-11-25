@@ -358,6 +358,27 @@
         "type": "github"
       }
     },
+    "prismix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794947305,
+        "narHash": "sha256-aqk/sWlUwWVZJR+r8ua33fNnZWIunECU3sjTBfsPu6w=",
+        "ref": "refs/tags/latest",
+        "rev": "4fc91c37b86440be7fd7c91e5dafbc05bb100477",
+        "revCount": 41,
+        "type": "git",
+        "url": "https://codeberg.org/OliMoli/prismix"
+      },
+      "original": {
+        "ref": "refs/tags/latest",
+        "type": "git",
+        "url": "https://codeberg.org/OliMoli/prismix"
+      }
+    },
     "reaper-flake": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -389,6 +410,7 @@
         "nixpkgs": "nixpkgs_2",
         "personal-site": "personal-site",
         "plasma-manager": "plasma-manager",
+        "prismix": "prismix",
         "reaper-flake": "reaper-flake",
         "rust-overlay": "rust-overlay",
         "scarlett2-firmware-nix": "scarlett2-firmware-nix",

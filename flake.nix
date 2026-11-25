@@ -40,10 +40,10 @@
     };
 
     # Prismix Minecraft launcher (https://codeberg.org/OliMoli/prismix)
-    # prismix = {
-    #   url = "git+https://codeberg.org/OliMoli/prismix?ref=refs/tags/latest";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    prismix = {
+      url = "git+https://codeberg.org/OliMoli/prismix?ref=refs/tags/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Reaper flake (https://github.com/9Prestidigitator/reaper-flake)
     reaper-flake = {
