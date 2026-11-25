@@ -26,6 +26,7 @@
           instances.main.minecraft = {
             version = "26.3";
             settings = {
+              version = 5023;
               ao = true;
               biomeBlendRadius = 7;
               chunkSectionFadeInTime = 0.4;
