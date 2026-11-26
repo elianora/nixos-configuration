@@ -28,6 +28,7 @@ in
 
           isNormalUser = true;
           linger = config.home-manager.users.${user}.service-user;
+          openssh.authorizedKeys.keys = config.home-manager.users.${user}.ssh-authorized-keys;
           shell = pkgs.bash;
         };
       }) users);

@@ -18,6 +18,12 @@ let
         };
 
         service-user = lib.mkEnableOption "Whether the user is a service user";
+        ssh-authorized-keys = lib.mkOption {
+          default = [];
+          description = "The SSH authorized keys for remote connections to this user";
+          type = with lib.types; listOf str;
+        };
+
         sudoer = lib.mkOption {
           default = true;
           description = "Whether to add the user to the sudoers group";

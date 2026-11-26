@@ -21,6 +21,11 @@
       };
     };
 
+    ssh-authorized-keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC3Lh9wdKK2j6kIuq7QQaeY6TKYUGu4nRniaB0S93dah personal@elianorarose.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIMydkK5yZgr5Atb/dT67ZlH9DlrWcz9Q6sXXvNXA0a9 elianora@ridley"
+    ];
+
     sudoer = false;
   };
 }
