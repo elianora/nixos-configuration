@@ -88,6 +88,7 @@
       misc.zint.enable = !osConfig.headless;
       multimedia = {
         beets.enable = true;
+        jellybox.enable = !osConfig.headless;
         kdenlive.enable = !osConfig.headless;
         krita.enable = !osConfig.headless;
         vlc.enable = !osConfig.headless;
