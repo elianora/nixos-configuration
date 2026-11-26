@@ -6,6 +6,7 @@
     ./firefox.nix
     ./halloy.nix
     ./konsole.nix
+    ./minecraft
     ./plasma
     ./reaper.nix
   ];
