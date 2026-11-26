@@ -51,7 +51,7 @@
         editors = {
           codium.enable = !osConfig.headless;
           helix.enable = true;
-          rider.enable = false; #!osConfig.headless;
+          rider.enable = !osConfig.headless;
         };
 
         languages = {
