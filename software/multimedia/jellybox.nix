@@ -16,7 +16,10 @@
           services.flatpak = {
             enable = true;
             packages = [ "jellybox:app/com.prodigytech.jellybox//master" ];
-            remotes.jellybox = "https://flatpak.jellybox.app/jellybox.flatpakrepo";
+            remotes = {
+              flathub = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+              jellybox = "https://flatpak.jellybox.app/jellybox.flatpakrepo";
+            };
           };
         };
       })
