@@ -6,7 +6,7 @@
   config.programs.firefox.policies = {
     AutofillAddressEnabled = false;
     AutofillCreditCardEnabled = false;
-    AIControls.Default = "blocked";
+    AIControls.Default.Value = "blocked";
     DisableFormHistory = true;
     DisableTelemetry = true;
     ExtensionSettings = {
